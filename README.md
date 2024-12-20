@@ -1,47 +1,34 @@
-# Astro Starter Kit: Minimal
+---
+title: Sam Felton
+---
 
-```sh
-npm create astro@latest -- --template minimal
-```
+# Sam Felton's Website
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+## About
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+This repo hosts my personal website, an intentionally evergreen site that should take you to all the links you need to find what I'm up to! It's written in Astro and Tailwind because I like ctrl clicking on elements to see their styles, even if I could have surely built this with plain html and css.
 
-## 🚀 Project Structure
+## Content
 
-Inside of your Astro project, you'll see the following folders and files:
+Hi, I'm Sam! I'm a developer passionate about intuitive design, on a mission to become a truly full stack developer.
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+Here's a bunch of links to my stuff. Enjoy!
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+[Download Resume](/felton-samuel-cv.pdf){.button}
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+#### About Me
 
-Any static assets, like images, can be placed in the `public/` directory.
+- [Blog](https://about.samfelton.com)
 
-## 🧞 Commands
+#### What I'm Working On
 
-All commands are run from the root of the project, from a terminal:
+- [My GitLab](https://gitlab.samfelton.com/me)
+- [My GitHub](https://github.com/samfeltip)
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+#### Where I Work
 
-## 👀 Want to learn more?
+- [LinkedIn](https://www.linkedin.com/in/samfelton/)
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+#### Get in Touch
+
+- [sf.samfelton@icloud.com](mailto:sf.samfelton@icloud.com)
