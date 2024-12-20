@@ -10,11 +10,11 @@ This repo hosts my personal website, an intentionally evergreen site that should
 
 ## Content
 
-Hi, I'm Sam! I'm a developer passionate about intuitive design, on a mission to become a truly full stack developer.
+Hi, I'm Sam! I'm a developer passionate about user focused design, on a mission to become a truly full stack developer.
 
 Here's a bunch of links to my stuff. Enjoy!
 
-[Download Resume](/felton-samuel-cv.pdf){.button}
+[Download Resume](/felton-samuel-cv.pdf)
 
 #### About Me
 
