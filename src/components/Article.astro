@@ -1,0 +1,7 @@
+---
+const { children, className = "" } = Astro.props;
+---
+
+<article class={`prose dark:prose-dark max-w-none ${className}`}>
+  <slot />
+</article>

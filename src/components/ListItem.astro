@@ -1,0 +1,18 @@
+---
+import Link from "./Link.astro";
+
+type Props = {
+  text: string;
+  href: string;
+  src: string;
+};
+
+const { text, href, src }: Props = Astro.props;
+---
+
+<li class="flex items-center">
+  <Link type="link" href={href}>
+    <img src={src} alt={text} class="w-5 h-5 mr-2" />
+    {text}
+  </Link>
+</li>

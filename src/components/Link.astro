@@ -1,0 +1,24 @@
+---
+type Props = {
+  type: "button" | "link";
+  href?: string;
+};
+
+const { type, href }: Props = Astro.props;
+---
+
+{
+  type === "button" && (
+    <button class="px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700">
+      <slot />
+    </button>
+  )
+}
+
+{
+  type === "link" && (
+    <a href={href} class="text-gray-600 hover:underline">
+      <slot />
+    </a>
+  )
+}

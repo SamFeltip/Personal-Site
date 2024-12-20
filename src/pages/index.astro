@@ -1,16 +1,73 @@
 ---
+import BaseHead from "../components/BaseHead.astro";
+import H1 from "../components/H1.astro";
+import H2 from "../components/H2.astro";
+import H3 from "../components/H3.astro";
+import P from "../components/P.astro";
+import MaxWidth from "../components/MaxWidth.astro";
+import Article from "../components/Article.astro";
+import Link from "../components/Link.astro";
+import Body from "../components/Body.astro";
 
+import LinkedInIcon from "../assets/linkedin.svg";
+import GitHubIcon from "../assets/github.svg";
+import GitLabIcon from "../assets/gitlab.svg";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+  <BaseHead title="Sam Felton" />
+  <Body>
+    <MaxWidth>
+      <H1>Sam Felton's Website</H1>
+      <P
+        >Hi, I'm Sam, a developer passionate about intuitive design, on a
+        mission to become a truly full stack developer.</P
+      >
+      <P>Here's a bunch of links to my stuff. Enjoy!</P>
+      <Article>
+        <H2>About Me</H2>
+        <Link type="button" href="/Felton-Samuel-Resume.pdf">
+          Download Resume
+        </Link>
+      </Article>
+      <Article>
+        <H2>Personal Projects</H2>
+        <ul class="list-disc list-inside">
+          <li>
+            <Link type="link" href="https://gitlab.samfelton.com/me">
+              My GitLab</Link
+            >
+          </li>
+          <li>
+            <Link type="link" href="https://github.com/samfeltip">
+              My GitHub</Link
+            >
+          </li>
+        </ul>
+      </Article>
+      <Article>
+        <H2>Work Experience</H2>
+        <ul class="list-disc list-inside">
+          <li class="flex items-center">
+            <img src={LinkedInIcon} alt="LinkedIn" class="w-5 h-5 mr-2" />
+            <Link type="link" href="https://www.linkedin.com/in/samfelton/"
+              >LinkedIn</Link
+            >
+          </li>
+          <li class="flex items-center">
+            <img src={GitHubIcon} alt="GitHub" class="w-5 h-5 mr-2" />
+            <Link type="link" href="https://github.com/samfeltip"
+              >My GitHub</Link
+            >
+          </li>
+          <li class="flex items-center">
+            <img src={GitLabIcon} alt="GitLab" class="w-5 h-5 mr-2" />
+            <Link type="link" href="https://gitlab.com/samfeltip"
+              >My GitLab</Link
+            >
+          </li>
+        </ul>
+      </Article>
+    </MaxWidth>
+  </Body>
 </html>
