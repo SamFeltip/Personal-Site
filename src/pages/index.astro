@@ -8,64 +8,75 @@ import MaxWidth from "../components/MaxWidth.astro";
 import Article from "../components/Article.astro";
 import Link from "../components/Link.astro";
 import Body from "../components/Body.astro";
+import ListItem from "../components/ListItem.astro";
 
-import LinkedInIcon from "../assets/linkedin.svg";
-import GitHubIcon from "../assets/github.svg";
-import GitLabIcon from "../assets/gitlab.svg";
+import LinkedInIcon from "../icons/linkedin.svg";
+import GitHubIcon from "../icons/github.svg";
+import GitLabIcon from "../icons/gitlab.svg";
+import BlogIcon from "../icons/blog.svg";
 ---
 
 <html lang="en">
   <BaseHead title="Sam Felton" />
   <Body>
     <MaxWidth>
-      <H1>Sam Felton's Website</H1>
-      <P
-        >Hi, I'm Sam, a developer passionate about intuitive design, on a
-        mission to become a truly full stack developer.</P
-      >
-      <P>Here's a bunch of links to my stuff. Enjoy!</P>
       <Article>
-        <H2>About Me</H2>
-        <Link type="button" href="/Felton-Samuel-Resume.pdf">
+        <H1>Sam Felton's Website</H1>
+        <P
+          >Hi, I'm Sam! I'm a developer passionate about intuitive design, on a
+          mission to become a truly full stack developer.</P
+        >
+        <P>Here's a bunch of links to my stuff. Enjoy!</P>
+
+        <Link type="link" style="button" href="/felton-samuel-cv.pdf">
           Download Resume
         </Link>
       </Article>
+
       <Article>
-        <H2>Personal Projects</H2>
-        <ul class="list-disc list-inside">
-          <li>
-            <Link type="link" href="https://gitlab.samfelton.com/me">
-              My GitLab</Link
-            >
-          </li>
-          <li>
-            <Link type="link" href="https://github.com/samfeltip">
-              My GitHub</Link
-            >
-          </li>
+        <H2>About Me</H2>
+
+        <ul class="flex flex-col gap-2">
+          <ListItem
+            text="Blog"
+            href="https://about.samfelton.com"
+            IconName="blog"
+          />
         </ul>
       </Article>
       <Article>
-        <H2>Work Experience</H2>
-        <ul class="list-disc list-inside">
-          <li class="flex items-center">
-            <img src={LinkedInIcon} alt="LinkedIn" class="w-5 h-5 mr-2" />
-            <Link type="link" href="https://www.linkedin.com/in/samfelton/"
-              >LinkedIn</Link
-            >
-          </li>
-          <li class="flex items-center">
-            <img src={GitHubIcon} alt="GitHub" class="w-5 h-5 mr-2" />
-            <Link type="link" href="https://github.com/samfeltip"
-              >My GitHub</Link
-            >
-          </li>
-          <li class="flex items-center">
-            <img src={GitLabIcon} alt="GitLab" class="w-5 h-5 mr-2" />
-            <Link type="link" href="https://gitlab.com/samfeltip"
-              >My GitLab</Link
-            >
-          </li>
+        <H2>What I'm Working On</H2>
+        <ul class="flex flex-col gap-2">
+          <ListItem
+            text="My GitLab"
+            href="https://gitlab.samfelton.com/me"
+            IconName="gitlab"
+          />
+          <ListItem
+            text="My GitHub"
+            href="https://github.com/samfeltip"
+            IconName="github"
+          />
+        </ul>
+      </Article>
+      <Article>
+        <H2>Where I Work</H2>
+        <ul class="flex flex-col gap-2">
+          <ListItem
+            text="LinkedIn"
+            href="https://www.linkedin.com/in/samfelton/"
+            IconName="linkedin"
+          />
+        </ul>
+      </Article>
+      <Article>
+        <H2>Get in Touch</H2>
+        <ul class="flex flex-col gap-2">
+          <ListItem
+            text="sf.samfelton@icloud.com"
+            href="mailto:sf.samfelton@icloud.com"
+            IconName="email"
+          />
         </ul>
       </Article>
     </MaxWidth>

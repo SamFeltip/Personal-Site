@@ -1,15 +1,31 @@
 ---
 type Props = {
   type: "button" | "link";
+  style?: "button" | "link";
   href?: string;
+  classList?: string;
 };
 
-const { type, href }: Props = Astro.props;
+const { type, href, classList, style }: Props = Astro.props;
+
+if (type === "button" && href) {
+  throw new Error("Button links must not have an href attribute");
+}
+
+const buttonStyle =
+  "font-roboto px-4 py-2 bg-zinc-600 text-white rounded-lg hover:bg-zinc-700 hover:pointer";
+const linkStyle =
+  "font-roboto text-zinc-500 dark:text-zinc-400 hover:underline";
+
+let styles =
+  style === "button" || (style == null && type === "button")
+    ? buttonStyle
+    : linkStyle;
 ---
 
 {
   type === "button" && (
-    <button class="px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700">
+    <button class:list={[styles, classList]}>
       <slot />
     </button>
   )
@@ -17,7 +33,7 @@ const { type, href }: Props = Astro.props;
 
 {
   type === "link" && (
-    <a href={href} class="text-gray-600 hover:underline">
+    <a href={href} class:list={[styles, classList]}>
       <slot />
     </a>
   )
