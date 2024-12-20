@@ -2,6 +2,8 @@
 const { children, className = "" } = Astro.props;
 ---
 
-<article class={`prose mt-5 dark:prose-dark max-w-none ${className}`}>
+<article
+  class={`prose py-5 dark:prose-dark max-w-none motion-safe:animate-show  ${className}`}
+>
   <slot />
 </article>
