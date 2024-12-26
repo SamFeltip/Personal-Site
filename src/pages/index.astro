@@ -1,15 +1,17 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
-import H1 from "../components/H1.astro";
-import H2 from "../components/H2.astro";
-import H3 from "../components/H3.astro";
-import P from "../components/P.astro";
-import MaxWidth from "../components/MaxWidth.astro";
-import Article from "../components/Article.astro";
-import Link from "../components/Link.astro";
-import Body from "../components/Body.astro";
-import ListItem from "../components/ListItem.astro";
-import Aside from "../components/Aside.astro";
+import BaseHead from "../elements/BaseHead.astro";
+import H1 from "../elements/H1.astro";
+import h2 from "../elements/h2.astro";
+import H3 from "../elements/H3.astro";
+import P from "../elements/P.astro";
+import MaxWidth from "../elements/MaxWidth.astro";
+import Article from "../elements/Article.astro";
+import Link from "../elements/Link.astro";
+import Body from "../elements/Body.astro";
+import ListItem from "../elements/ListItem.astro";
+import Aside from "../elements/Aside.astro";
+
+import GithubSpotlight from "../components/githubSpotlight.astro";
 
 import { Image } from "astro:assets";
 
@@ -30,31 +32,24 @@ import profile from "../assets/imgs/sam.jpeg";
             width={300}
           />
           <Article delay={1000}>
-            <H3>Spotlight</H3>
-            <ul class="flex flex-col gap-3">
-              <ListItem
-                text="Sharrow Vale Small Businesses"
-                href="https://github.com/SamFeltip/Sharrowvale-Small-Businesses"
-                IconName="shop"
-              />
-            </ul>
+            <GithubSpotlight />
           </Article>
         </Aside>
         <div>
           <Article>
-            <H1>Sam Felton's Website</H1>
-            <P
-              >Hi, I'm Sam! I'm a developer passionate about user focused
-              design, on a mission to become a truly full stack developer.</P
-            >
-            <P>Here's a bunch of links to my stuff. Enjoy!</P>
+            <h1>Sam Felton's Website</h1>
+            <p>
+              Hi, I'm Sam! I'm a developer passionate about user focused design,
+              on a mission to become a truly full stack developer.
+            </p>
+            <p>Here's a bunch of links to my stuff. Enjoy!</p>
             <Link type="link" style="button" href="/felton-samuel-cv.pdf">
               Download Resume
             </Link>
           </Article>
 
           <Article delay={200}>
-            <H2>About Me</H2>
+            <h2>About Me</h2>
 
             <ul class="flex flex-col gap-3">
               <ListItem
@@ -65,7 +60,7 @@ import profile from "../assets/imgs/sam.jpeg";
             </ul>
           </Article>
           <Article delay={400}>
-            <H2>What I'm Working On</H2>
+            <h2>What I'm Working On</h2>
             <ul class="flex flex-col gap-3">
               <ListItem
                 text="My GitLab"
@@ -80,7 +75,7 @@ import profile from "../assets/imgs/sam.jpeg";
             </ul>
           </Article>
           <Article delay={600}>
-            <H2>Where I Work</H2>
+            <h2>Where I Work</h2>
             <ul class="flex flex-col gap-3">
               <ListItem
                 text="LinkedIn"
@@ -90,7 +85,7 @@ import profile from "../assets/imgs/sam.jpeg";
             </ul>
           </Article>
           <Article delay={800}>
-            <H2>Get in Touch</H2>
+            <h2>Get in Touch</h2>
             <ul class="flex flex-col gap-3">
               <ListItem
                 text="sf.samfelton@icloud.com"

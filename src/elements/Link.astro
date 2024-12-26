@@ -1,0 +1,31 @@
+---
+type Props = {
+  id?: string;
+  type: "button" | "link";
+  style?: "button" | "link";
+  href?: string;
+  classList?: string;
+};
+
+const { type, href, classList, style, id }: Props = Astro.props;
+
+if (type === "button" && href) {
+  throw new Error("Button links must not have an href attribute");
+}
+---
+
+{
+  type === "button" && (
+    <button id={id} class:list={[classList, style]}>
+      <slot />
+    </button>
+  )
+}
+
+{
+  type === "link" && (
+    <a id={id} href={href} class:list={[classList, style]}>
+      <slot />
+    </a>
+  )
+}

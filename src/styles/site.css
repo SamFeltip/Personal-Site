@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h1 {
+    @apply capitalize text-4xl font-bold font-playfair text-zinc-800 dark:text-zinc-100 mb-4;
+  }
+
+  h2 {
+    @apply capitalize text-3xl font-semibold font-playfair text-zinc-800 dark:text-zinc-100 mb-3;
+  }
+
+  h3 {
+    @apply capitalize font-playfair text-2xl font-semibold text-zinc-800 dark:text-zinc-400 mb-2;
+  }
+
+  p {
+    @apply text-base font-roboto text-zinc-700 dark:text-zinc-300 mb-4;
+  }
+
+  /* can be applied to a.button */
+  .button {
+    @apply text-base font-roboto px-4 py-2 bg-zinc-600 text-white rounded-lg hover:bg-zinc-700;
+  }
+
+  /* can be applied to button.link */
+  .link {
+    @apply text-base font-roboto text-zinc-500 dark:text-zinc-400 hover:underline;
+  }
+
+  aside {
+    @apply hidden md:block py-5;
+  }
+
+  article {
+    @apply py-5 max-w-none motion-preset-slide-up;
+  }
+
+  ul {
+    @apply text-zinc-500 dark:text-zinc-400 list-disc;
+  }
+}

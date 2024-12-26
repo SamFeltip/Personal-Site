@@ -3,17 +3,25 @@ import { Icon } from "astro-icon/components";
 import Link from "./Link.astro";
 
 type Props = {
+  id?: string;
   text: string;
   href: string;
   IconName: string;
 };
 
-const { text, href, IconName }: Props = Astro.props;
+const { id, text, href, IconName }: Props = Astro.props;
 ---
 
 <li class="flex items-center">
-  <Link type="link" href={href} classList="flex flex-row items-center gap-2">
+  <Link
+    id={id}
+    type="link"
+    href={href}
+    classList="flex flex-row items-center gap-2"
+  >
     <Icon name={IconName} size={25} />
-    {text}
+    <span class="text">
+      {text}
+    </span>
   </Link>
 </li>

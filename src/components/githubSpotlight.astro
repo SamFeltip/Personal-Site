@@ -1,0 +1,66 @@
+---
+import H3 from "../elements/H3.astro";
+---
+
+<script>
+  function setSpotlightError(listContainer: HTMLUListElement) {
+    const errorItem = document.createElement("li");
+    errorItem.className = "error-item";
+    errorItem.textContent = "Error loading repositories";
+    listContainer.innerHTML = "";
+    listContainer.appendChild(errorItem);
+  }
+
+  async function getRecentRepos(username: string) {
+    const response = await fetch(
+      `https://api.github.com/users/${username}/repos?sort=pushed&direction=desc&per_page=3`
+    );
+    const repos = await response.json();
+    return repos;
+  }
+
+  async function updateRepos() {
+    const listContainer = document.querySelector(
+      "ul#github-spotlight-list"
+    ) as HTMLUListElement;
+
+    if (listContainer == null) {
+      throw new Error("Could not find element with id 'github-spotlight-list'");
+    }
+
+    try {
+      const repos = await getRecentRepos("samfeltip");
+
+      if (repos && Array.isArray(repos)) {
+        listContainer.innerHTML = repos
+          .map(
+            (repo) => `
+          <li class="repo-item">
+            <a href="${repo.html_url}" class="">
+              <span class="text">${repo.name}</span>
+            </a>
+          </li>
+        `
+          )
+          .join("");
+      } else {
+        setSpotlightError(listContainer);
+      }
+    } catch (e) {
+      console.error(e);
+      setSpotlightError(listContainer);
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", updateRepos);
+</script>
+
+<H3>Recent Projects</H3>
+
+<ul id="github-spotlight-list" class="space-y-2">
+  <li class="repo-item">
+    <a href="#" class="flex items-center gap-2 p-2">
+      <span class="text">Loading...</span>
+    </a>
+  </li>
+</ul>
