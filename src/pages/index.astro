@@ -2,12 +2,14 @@
 import BaseHead from "../components/BaseHead.astro";
 import H1 from "../components/H1.astro";
 import H2 from "../components/H2.astro";
+import H3 from "../components/H3.astro";
 import P from "../components/P.astro";
 import MaxWidth from "../components/MaxWidth.astro";
 import Article from "../components/Article.astro";
 import Link from "../components/Link.astro";
 import Body from "../components/Body.astro";
 import ListItem from "../components/ListItem.astro";
+import Aside from "../components/aside.astro";
 
 import { Image } from "astro:assets";
 
@@ -18,8 +20,8 @@ import profile from "../assets/imgs/sam.jpeg";
   <BaseHead title="Sam Felton's website" />
   <Body>
     <MaxWidth>
-      <div class="flex gap-4">
-        <div class="hidden sm:block py-5">
+      <div class="flex gap-3">
+        <Aside>
           <Image
             class="rounded-full dark:border-white dark:border-4"
             src={profile}
@@ -27,7 +29,17 @@ import profile from "../assets/imgs/sam.jpeg";
             height={300}
             width={300}
           />
-        </div>
+          <Article delay={1000}>
+            <H3>Spotlight</H3>
+            <ul class="flex flex-col gap-3">
+              <ListItem
+                text="Sharrow Vale Small Businesses"
+                href="https://github.com/SamFeltip/Sharrowvale-Small-Businesses"
+                IconName="shop"
+              />
+            </ul>
+          </Article>
+        </Aside>
         <div>
           <Article>
             <H1>Sam Felton's Website</H1>
@@ -44,7 +56,7 @@ import profile from "../assets/imgs/sam.jpeg";
           <Article delay={200}>
             <H2>About Me</H2>
 
-            <ul class="flex flex-col gap-2">
+            <ul class="flex flex-col gap-3">
               <ListItem
                 text="Blog"
                 href="https://about.samfelton.com"
@@ -54,7 +66,7 @@ import profile from "../assets/imgs/sam.jpeg";
           </Article>
           <Article delay={400}>
             <H2>What I'm Working On</H2>
-            <ul class="flex flex-col gap-2">
+            <ul class="flex flex-col gap-3">
               <ListItem
                 text="My GitLab"
                 href="https://gitlab.samfelton.com/me"
@@ -69,7 +81,7 @@ import profile from "../assets/imgs/sam.jpeg";
           </Article>
           <Article delay={600}>
             <H2>Where I Work</H2>
-            <ul class="flex flex-col gap-2">
+            <ul class="flex flex-col gap-3">
               <ListItem
                 text="LinkedIn"
                 href="https://www.linkedin.com/in/samfelton/"
@@ -79,7 +91,7 @@ import profile from "../assets/imgs/sam.jpeg";
           </Article>
           <Article delay={800}>
             <H2>Get in Touch</H2>
-            <ul class="flex flex-col gap-2">
+            <ul class="flex flex-col gap-3">
               <ListItem
                 text="sf.samfelton@icloud.com"
                 href="mailto:sf.samfelton@icloud.com"
