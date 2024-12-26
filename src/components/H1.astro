@@ -1,9 +1,12 @@
 ---
-const { children } = Astro.props;
+const { classList } = Astro.props;
 ---
 
 <h1
-  class="capitalize text-3xl sm:text-4xl font-bold font-playfair text-zinc-800 dark:text-zinc-100 mb-4"
+  class:list={[
+    "capitalize text-3xl sm:text-4xl font-bold font-playfair text-zinc-800 dark:text-zinc-100 mb-4",
+    classList,
+  ]}
 >
   <slot />
 </h1>

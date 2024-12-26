@@ -2,7 +2,6 @@
 import BaseHead from "../components/BaseHead.astro";
 import H1 from "../components/H1.astro";
 import H2 from "../components/H2.astro";
-import H3 from "../components/H3.astro";
 import P from "../components/P.astro";
 import MaxWidth from "../components/MaxWidth.astro";
 import Article from "../components/Article.astro";
@@ -10,75 +9,86 @@ import Link from "../components/Link.astro";
 import Body from "../components/Body.astro";
 import ListItem from "../components/ListItem.astro";
 
-import LinkedInIcon from "../icons/linkedin.svg";
-import GitHubIcon from "../icons/github.svg";
-import GitLabIcon from "../icons/gitlab.svg";
-import BlogIcon from "../icons/blog.svg";
+import { Image } from "astro:assets";
+
+import profile from "../assets/imgs/sam.jpeg";
 ---
 
 <html lang="en">
-  <BaseHead title="Sam Felton" />
+  <BaseHead title="Sam Felton's website" />
   <Body>
     <MaxWidth>
-      <Article>
-        <H1>Sam Felton's Website</H1>
-        <P
-          >Hi, I'm Sam! I'm a developer passionate about user focused design, on
-          a mission to become a truly full stack developer.</P
-        >
-        <P>Here's a bunch of links to my stuff. Enjoy!</P>
+      <div class="flex gap-4">
+        <div class="hidden sm:block py-5">
+          <Image
+            class="rounded-full dark:border-white dark:border-4"
+            src={profile}
+            alt="profile"
+            height={300}
+            width={300}
+          />
+        </div>
+        <div>
+          <Article>
+            <H1>Sam Felton's Website</H1>
+            <P
+              >Hi, I'm Sam! I'm a developer passionate about user focused
+              design, on a mission to become a truly full stack developer.</P
+            >
+            <P>Here's a bunch of links to my stuff. Enjoy!</P>
+            <Link type="link" style="button" href="/felton-samuel-cv.pdf">
+              Download Resume
+            </Link>
+          </Article>
 
-        <Link type="link" style="button" href="/felton-samuel-cv.pdf">
-          Download Resume
-        </Link>
-      </Article>
+          <Article delay={200}>
+            <H2>About Me</H2>
 
-      <Article>
-        <H2>About Me</H2>
-
-        <ul class="flex flex-col gap-2">
-          <ListItem
-            text="Blog"
-            href="https://about.samfelton.com"
-            IconName="blog"
-          />
-        </ul>
-      </Article>
-      <Article>
-        <H2>What I'm Working On</H2>
-        <ul class="flex flex-col gap-2">
-          <ListItem
-            text="My GitLab"
-            href="https://gitlab.samfelton.com/me"
-            IconName="gitlab"
-          />
-          <ListItem
-            text="My GitHub"
-            href="https://github.com/samfeltip"
-            IconName="github"
-          />
-        </ul>
-      </Article>
-      <Article>
-        <H2>Where I Work</H2>
-        <ul class="flex flex-col gap-2">
-          <ListItem
-            text="LinkedIn"
-            href="https://www.linkedin.com/in/samfelton/"
-            IconName="linkedin"
-          />
-        </ul>
-      </Article>
-      <Article>
-        <H2>Get in Touch</H2>
-        <ul class="flex flex-col gap-2">
-          <ListItem
-            text="sf.samfelton@icloud.com"
-            href="mailto:sf.samfelton@icloud.com"
-            IconName="email"
-          />
-        </ul>
-      </Article>
+            <ul class="flex flex-col gap-2">
+              <ListItem
+                text="Blog"
+                href="https://about.samfelton.com"
+                IconName="blog"
+              />
+            </ul>
+          </Article>
+          <Article delay={400}>
+            <H2>What I'm Working On</H2>
+            <ul class="flex flex-col gap-2">
+              <ListItem
+                text="My GitLab"
+                href="https://gitlab.samfelton.com/me"
+                IconName="gitlab"
+              />
+              <ListItem
+                text="My GitHub"
+                href="https://github.com/samfeltip"
+                IconName="github"
+              />
+            </ul>
+          </Article>
+          <Article delay={600}>
+            <H2>Where I Work</H2>
+            <ul class="flex flex-col gap-2">
+              <ListItem
+                text="LinkedIn"
+                href="https://www.linkedin.com/in/samfelton/"
+                IconName="linkedin"
+              />
+            </ul>
+          </Article>
+          <Article delay={800}>
+            <H2>Get in Touch</H2>
+            <ul class="flex flex-col gap-2">
+              <ListItem
+                text="sf.samfelton@icloud.com"
+                href="mailto:sf.samfelton@icloud.com"
+                IconName="email"
+              />
+            </ul>
+          </Article>
+        </div>
+      </div>
     </MaxWidth>
   </Body>
 </html>

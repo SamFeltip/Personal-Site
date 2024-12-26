@@ -1,9 +1,15 @@
 ---
-const { children, className = "" } = Astro.props;
+type Props = {
+  className?: string;
+  delay?: number;
+};
+
+const { className = "", delay = 0 }: Props = Astro.props;
 ---
 
 <article
-  class={`prose py-5 dark:prose-dark max-w-none motion-safe:animate-show  ${className}`}
+  class={`py-5 max-w-none motion-preset-slide-up ${className}`}
+  style={`--motion-delay: ${delay}ms`}
 >
   <slot />
 </article>
