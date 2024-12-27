@@ -7,7 +7,7 @@ type Props = {
 const { feedUrl, title = "Recent Posts" }: Props = Astro.props;
 ---
 
-<script define:vars={{ feedUrl }}>
+<script is:inline define:vars={{ feedUrl }}>
   async function fetchRSSFeed() {
     const container = document.querySelector("#rss-feed-list");
     if (!container) return;
