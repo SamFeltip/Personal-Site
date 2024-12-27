@@ -1,0 +1,79 @@
+---
+type Props = {
+  feedUrl: string;
+  title?: string;
+};
+
+const { feedUrl, title = "Recent Posts" }: Props = Astro.props;
+---
+
+<script define:vars={{ feedUrl }}>
+  async function fetchRSSFeed() {
+    const container = document.querySelector("#rss-feed-list");
+    if (!container) return;
+
+    try {
+      const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(feedUrl)}`;
+
+      const response = await fetch(proxyUrl);
+      const text = await response.text();
+      const parser = new DOMParser();
+      const xmlDoc = parser.parseFromString(text, "text/xml");
+
+      // Handle both RSS and Atom feeds
+      const items = xmlDoc.querySelectorAll("item, entry");
+      const feedItems = Array.from(items)
+        .slice(0, 3)
+        .map((item) => {
+          const title = item.querySelector("title")?.textContent || "Untitled";
+          // Handle both RSS link and Atom link
+          const link =
+            item.querySelector("link")?.textContent ||
+            item.querySelector("link")?.getAttribute("href") ||
+            "#";
+          const date =
+            item.querySelector("pubDate, published")?.textContent || "";
+
+          return { title, link, date };
+        });
+
+      container.innerHTML = feedItems
+        .map(
+          (item) => `
+        <li class="feed-item">
+          <a href="${item.link}" 
+            class="link"
+            target="_blank" 
+            rel="noopener noreferrer">
+            <span>${item.title}</span>
+            ${
+              item.date
+                ? `
+              <time class="text-sm text-gray-500">
+                ${new Date(item.date).toLocaleDateString()}
+              </time>
+            `
+                : ""
+            }
+          </a>
+        </li>
+      `
+        )
+        .join("");
+    } catch (error) {
+      console.error("Error fetching RSS feed:", error);
+      container.innerHTML = `
+        <li class="feed-error p-3 text-red-500">
+          Error loading feed content
+        </li>
+      `;
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", fetchRSSFeed);
+</script>
+
+<div class="rss-feed">
+  {title && <h3>{title}</h3>}
+  <ul id="rss-feed-list" class="space-y-2"></ul>
+</div>
