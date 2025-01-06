@@ -6,7 +6,7 @@ title: Sam Felton
 
 ## About
 
-This repo hosts my personal website, an intentionally evergreen site that should take you to all the links you need to find what I'm up to! It's written in Astro and Tailwind because I like ctrl clicking on elements to see their styles, even if I could have surely built this with plain html and css.
+This repo hosts my personal website, an intentionally evergreen site that should take you to all the links you need to find what I'm up to! It's written in Astro and Tailwind.
 
 ## Content
 
