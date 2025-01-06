@@ -31,4 +31,4 @@ Here's a bunch of links to my stuff. Enjoy!
 
 #### Get in Touch
 
-- [sf.samfelton@icloud.com](mailto:sf.samfelton@icloud.com)
+- [sf.samfelton@icloud.com](mailto:contact@samfelton.com)
