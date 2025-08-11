@@ -22,8 +22,8 @@ Here's a bunch of links to my stuff. Enjoy!
 
 #### What I'm Working On
 
-- [My GitLab](https://gitlab.samfelton.com/me)
 - [My GitHub](https://github.com/samfeltip)
+- [My GitLab](https://gitlab.samfelton.com/me)
 
 #### Where I Work
 
