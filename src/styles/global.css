@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+/*
+keyframes: {
+        show: {
+          "0%": { opacity: 0, transform: "translateY(20px)" },
+          "100%": { opacity: 1, transform: "translateY(0)" },
+        },
+      },
+      animation: {
+        show: "show 0.5s ease-out forwards",
+      },
+      */
+@theme {
+  --animate-show: show 0.5s ease-out forwards;
+  @keyframes show {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+@layer base {
+
+  h2 {
+    @apply capitalize text-3xl font-bold text-zinc-800 dark:text-zinc-100 mb-3;
+    font-family: var(--font-header);
+  }
+
+  h3 {
+    @apply capitalize text-2xl font-semibold text-zinc-500 mb-2;
+    font-family: var(--font-body);
+    
+  }
+
+  p {
+    @apply text-base text-zinc-700 dark:text-zinc-300 mb-4;
+    font-family: var(--font-body);
+  }
+
+  /* can be applied to a.button */
+  .button {
+    @apply text-base px-4 py-2 bg-zinc-600 text-white rounded-lg hover:bg-zinc-700;
+    font-family: var(--font-body);
+  }
+
+  /* can be applied to button.link */
+  .link {
+    @apply text-base text-zinc-500 dark:text-zinc-400 hover:underline;
+    font-family: var(--font-body);
+  }
+
+  ul {
+    @apply text-zinc-500 dark:text-zinc-400 list-disc;
+  }
+}

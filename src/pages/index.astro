@@ -17,7 +17,7 @@ import profile from "../assets/imgs/sam.jpeg";
     <MaxWidth>
       <div id="content">
         <Article>
-          <div id="profile" class="flex items-center h-[200px] w-[200px]">
+          <div id="profile" class="flex items-center h-50 w-50">
             <Image
               class="rounded-full dark:border-white dark:border-4"
               src={profile}
@@ -30,7 +30,12 @@ import profile from "../assets/imgs/sam.jpeg";
         <aside></aside>
         <header>
           <Article>
-            <h1>Sam Felton</h1>
+            <h1
+              class="capitalize text-4xl font-bold text-zinc-800 dark:text-zinc-100 mb-4"
+              style={{ fontFamily: "var(--font-header)" }}
+            >
+              Sam Felton
+            </h1>
             <p>
               Hi, I'm Sam! I'm trying to get rid of social media. I'm also a
               software developer.

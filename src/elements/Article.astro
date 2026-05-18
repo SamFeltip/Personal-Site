@@ -8,7 +8,7 @@ const { className = "", delay = 0 }: Props = Astro.props;
 ---
 
 <article
-  class={`py-5 max-w-none opacity-0 animate-show ${className}`}
+  class={`py-5 max-w-none motion-safe:opacity-0 motion-safe:animate-show ${className}`}
   style={{ "animation-delay": `${delay}ms` }}
 >
   <slot />
