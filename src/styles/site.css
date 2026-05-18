@@ -30,7 +30,7 @@
   }
 
   article {
-    @apply py-5 max-w-none motion-preset-slide-up;
+    @apply py-5 max-w-none animate-show;
   }
 
   ul {
